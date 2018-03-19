@@ -1,28 +1,3 @@
-// export class HungryBear {
-//
-//   constructor(name) {
-//     this.name = name;
-//     this.foodLevel = 10;
-//   }
-//
-//   setHunger() {
-//     setInterval(() => {
-//       this.foodLevel--;
-//     }, 1000);
-//   }
-//
-//   didYouGetEaten() {
-//    if (this.foodLevel > 0) {
-//      return false;
-//    } else {
-//      return true;
-//    }
-//  }
-//
-//  feed() {
-//    this.foodLevel = 10;
-//  }
-// }
 export let bear = {
   foodLevel: 10,
 
@@ -57,4 +32,4 @@ bear.eatLarge = bear.feed(15);
 bear.eatYuck = bear.feed(-10);
 bear.eatPowerUp = bear.feed(50);
 bear.eatSpecialBonus = bear.feed(100);
-bear.eatWeirdThing = bear.feed(Math.floor((Math.random() * 20) + 1));
+bear.eatWeirdThing =  bear.feed(Math.floor((Math.random() * 20) + 1));
