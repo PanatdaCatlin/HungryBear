@@ -1,3 +1,7 @@
 body{
-  background-color: lightyellow;
+  background-color: cornsilk;
 }
+
+.jumbotron {
+    background-color: lavenderblush;
+  }
