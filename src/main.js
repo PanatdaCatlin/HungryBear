@@ -4,40 +4,60 @@ import './styles.css';
 import $ from 'jquery';
 import { bear } from './../js/hungrybear.js';
 
+let foodLevelBar = bear.setHunger() ;
+$(function(){
+foodLevelBar = parseFloat($(".progress-bar").css("width")) + 1;
+
+setInterval(function() {
+$(".progress-bar").text(bear.foodLevel);
+ $(".progress-bar").css("width", bear.foodLevel);
+  if (bear.foodLevel == 0)
+  {
+    $("#death").show();
+  }
+},1000);
+})
+
 $(document).ready(function(){
   $('#eat-small').click(function(){
     bear.eatSmall("blueberries");
-    console.log(bear.foodLevel);
+    $(".progress-bar").text(bear.foodLevel);
+    $(".progress-bar").css("width", foodLevelBar);
   })
 
   $('#eat-medium').click(function(){
     bear.eatMedium("honey");
-    console.log(bear.foodLevel);
+    $(".progress-bar").text(bear.foodLevel);
+    $(".progress-bar").css("width", foodLevelBar);
   })
 
   $('#eat-large').click(function(){
     bear.eatLarge("salmon");
-    console.log(bear.foodLevel);
+    $(".progress-bar").text(bear.foodLevel);
+    $(".progress-bar").css("width", foodLevelBar);
   })
 
   $('#eat-yuck').click(function(){
     bear.eatYuck("sticks");
-    console.log(bear.foodLevel);
+    $(".progress-bar").text(bear.foodLevel);
+    $(".progress-bar").css("width", foodLevelBar);
   })
 
   $('#eat-power-up').click(function(){
     bear.eatPowerUp("baby deer");
-    console.log(bear.foodLevel);
+    $(".progress-bar").text(bear.foodLevel);
+    $(".progress-bar").css("width", foodLevelBar);
   })
 
   $('#eat-special-bonus').click(function(){
     bear.eatSpecialBonus("everything");
-    console.log(bear.foodLevel);
+    $(".progress-bar").text(bear.foodLevel);
+    $(".progress-bar").css("width", foodLevelBar);
   })
 
   $('#eat-weird-things').click(function(){
     bear.eatWeirdThing("everything");
-    console.log(bear.foodLevel);
+    $(".progress-bar").text(bear.foodLevel);
+    $(".progress-bar").css("width", foodLevelBar);
   })
-
 });

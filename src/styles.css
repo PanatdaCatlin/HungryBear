@@ -5,3 +5,7 @@ body{
 .jumbotron {
     background-color: lavenderblush;
   }
+
+  #death{
+    display: none;
+  }
