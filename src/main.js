@@ -22,42 +22,36 @@ $(document).ready(function(){
   $('#eat-small').click(function(){
     bear.eatSmall("blueberries");
     $(".progress-bar").text(bear.foodLevel);
-    $(".progress-bar").css("width", foodLevelBar);
+
   })
 
   $('#eat-medium').click(function(){
     bear.eatMedium("honey");
     $(".progress-bar").text(bear.foodLevel);
-    $(".progress-bar").css("width", foodLevelBar);
   })
 
   $('#eat-large').click(function(){
     bear.eatLarge("salmon");
     $(".progress-bar").text(bear.foodLevel);
-    $(".progress-bar").css("width", foodLevelBar);
   })
 
   $('#eat-yuck').click(function(){
     bear.eatYuck("sticks");
     $(".progress-bar").text(bear.foodLevel);
-    $(".progress-bar").css("width", foodLevelBar);
   })
 
   $('#eat-power-up').click(function(){
     bear.eatPowerUp("baby deer");
     $(".progress-bar").text(bear.foodLevel);
-    $(".progress-bar").css("width", foodLevelBar);
   })
 
   $('#eat-special-bonus').click(function(){
     bear.eatSpecialBonus("everything");
     $(".progress-bar").text(bear.foodLevel);
-    $(".progress-bar").css("width", foodLevelBar);
   })
 
   $('#eat-weird-things').click(function(){
     bear.eatWeirdThing("everything");
     $(".progress-bar").text(bear.foodLevel);
-    $(".progress-bar").css("width", foodLevelBar);
   })
 });
