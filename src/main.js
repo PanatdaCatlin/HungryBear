@@ -1,6 +1,7 @@
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
+import './../.env'
 import $ from 'jquery';
 import { bear } from './../js/hungrybear.js';
 
@@ -18,7 +19,62 @@ $(".progress-bar").text(bear.foodLevel);
 },1000);
 })
 
-$(document).ready(function(){
+//$(document).ready(function(){
+
+  // let promise = new Promise(function(resolve, reject) {
+  //   let request = new XMLHttpRequest();
+  //   let url = `https://api.giphy.com/v1/gifs/search?api_key=` + process.env.API_KEY + `&q=bear&limit=25&offset=0&rating=G&lang=en`;
+  //   request.onload = function() {
+  //     if (this.status === 200) {
+  //       resolve(request.response);
+  //     } else {
+  //       reject(Error(request.statusText));
+  //     }
+  //   }
+  //   request.open("GET", url, true);
+  //   request.send();
+  // });
+  //
+  // promise.then(function(response) {
+  //   body = JSON.parse(response);
+  //   $('.showBear').show(`${body.main.bear}`);
+  //
+  // }, function(error) {
+  //   $('.showErrors').text(`There was an error processing your request: ${error.message}`);
+  // });
+
+  $(document).ready(function() {
+      $.get(`https://api.giphy.com/v1/gifs/search?api_key=` + process.env.API_KEY + `&q=bear&limit=25&offset=0&rating=G&lang=en`).then(function(response) {
+        console.log(response);
+        let rand = Math.floor(Math.random()*24);
+        console.log(rand);
+        $('#showBear').append("<img src='"+response.data[rand].images.original.url+"' />");
+
+      }).fail(function(error) {
+        $('.showErrors').text(`There was an error processing your request: ${error.responseText}. Please try again.`);
+      });
+
+      $.get(`https://api.giphy.com/v1/gifs/search?api_key=` + process.env.API_KEY + `&q=death&limit=25&offset=0&rating=G&lang=en`).then(function(response) {
+        console.log(response);
+        let rand = Math.floor(Math.random()*24);
+        console.log(rand);
+        $('#death').append("<img src='"+response.data[rand].images.original.url+"' />");
+
+      }).fail(function(error) {
+        $('.showErrors').text(`There was an error processing your request: ${error.responseText}. Please try again.`);
+      });
+
+      $.get(`https://api.giphy.com/v1/gifs/search?api_key=` + process.env.API_KEY + `&q=cartoon people&limit=25&offset=0&rating=G&lang=en`).then(function(response) {
+        console.log(response);
+        let rand = Math.floor(Math.random()*24);
+        console.log(rand);
+        $('#showPerson').append("<img src='"+response.data[rand].images.original.url+"' />");
+
+      }).fail(function(error) {
+        $('.showErrors').text(`There was an error processing your request: ${error.responseText}. Please try again.`);
+      });
+
+
   $('#eat-small').click(function(){
     bear.eatSmall("blueberries");
     $(".progress-bar").text(bear.foodLevel);
