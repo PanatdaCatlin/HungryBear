@@ -15,40 +15,17 @@ $(".progress-bar").text(bear.foodLevel);
   if (bear.foodLevel == 0)
   {
     $("#death").show();
+    $("#game").hide();
   }
 },1000);
 })
-
-//$(document).ready(function(){
-
-  // let promise = new Promise(function(resolve, reject) {
-  //   let request = new XMLHttpRequest();
-  //   let url = `https://api.giphy.com/v1/gifs/search?api_key=` + process.env.API_KEY + `&q=bear&limit=25&offset=0&rating=G&lang=en`;
-  //   request.onload = function() {
-  //     if (this.status === 200) {
-  //       resolve(request.response);
-  //     } else {
-  //       reject(Error(request.statusText));
-  //     }
-  //   }
-  //   request.open("GET", url, true);
-  //   request.send();
-  // });
-  //
-  // promise.then(function(response) {
-  //   body = JSON.parse(response);
-  //   $('.showBear').show(`${body.main.bear}`);
-  //
-  // }, function(error) {
-  //   $('.showErrors').text(`There was an error processing your request: ${error.message}`);
-  // });
 
   $(document).ready(function() {
       $.get(`https://api.giphy.com/v1/gifs/search?api_key=` + process.env.API_KEY + `&q=bear&limit=25&offset=0&rating=G&lang=en`).then(function(response) {
         console.log(response);
         let rand = Math.floor(Math.random()*24);
         console.log(rand);
-        $('#showBear').append("<img src='"+response.data[rand].images.original.url+"' />");
+        $('#showBear').append("<img src='"+response.data[rand].images.fixed_height_downsampled.url+"' />");
 
       }).fail(function(error) {
         $('.showErrors').text(`There was an error processing your request: ${error.responseText}. Please try again.`);
@@ -58,7 +35,7 @@ $(".progress-bar").text(bear.foodLevel);
         console.log(response);
         let rand = Math.floor(Math.random()*24);
         console.log(rand);
-        $('#death').append("<img src='"+response.data[rand].images.original.url+"' />");
+        $('#death').append("<img src='"+response.data[rand].images.fixed_height_downsampled.url+"' />");
 
       }).fail(function(error) {
         $('.showErrors').text(`There was an error processing your request: ${error.responseText}. Please try again.`);
@@ -68,7 +45,7 @@ $(".progress-bar").text(bear.foodLevel);
         console.log(response);
         let rand = Math.floor(Math.random()*24);
         console.log(rand);
-        $('#showPerson').append("<img src='"+response.data[rand].images.original.url+"' />");
+        $('#showPerson').append("<img src='"+response.data[rand].images.fixed_height_downsampled.url+"' />");
 
       }).fail(function(error) {
         $('.showErrors').text(`There was an error processing your request: ${error.responseText}. Please try again.`);
