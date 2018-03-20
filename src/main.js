@@ -12,7 +12,7 @@ foodLevelBar = parseFloat($(".progress-bar").css("width")) + 1;
 setInterval(function() {
 $(".progress-bar").text(bear.foodLevel);
  $(".progress-bar").css("width", bear.foodLevel);
-  if (bear.foodLevel == 0)
+  if (bear.foodLevel <= 0)
   {
     $("#death").show();
     $("#game").hide();
@@ -41,7 +41,7 @@ $(".progress-bar").text(bear.foodLevel);
         $('.showErrors').text(`There was an error processing your request: ${error.responseText}. Please try again.`);
       });
 
-      $.get(`https://api.giphy.com/v1/gifs/search?api_key=` + process.env.API_KEY + `&q=cartoon people&limit=25&offset=0&rating=G&lang=en`).then(function(response) {
+      $.get(`https://api.giphy.com/v1/gifs/search?api_key=` + process.env.API_KEY + `&q=cartoon person&limit=25&offset=0&rating=G&lang=en`).then(function(response) {
         console.log(response);
         let rand = Math.floor(Math.random()*24);
         console.log(rand);
@@ -84,7 +84,9 @@ $(".progress-bar").text(bear.foodLevel);
   })
 
   $('#eat-weird-things').click(function(){
-    bear.eatWeirdThing("everything");
+    bear.eatWeirdThing("bugs");
     $(".progress-bar").text(bear.foodLevel);
+
+    console.log(bear.foodLevel)
   })
 });

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Splash!</title>
+  <title>Hungry Bear!</title>
 </head>
 <body>
 
@@ -10,40 +10,49 @@
       <center><h1>Hungry Bear</h1></center>
     </div>
     <div id="game">
-    <p id="aboutHungryBear">Feed the bear before it eats you!
-      <br>
-      <div class="row">
-        <div class="col-8">
-          <hr>
-          <button id="eat-small" type="button" class="btn btn-primary">Blueberries</button>
+      <p id="aboutHungryBear">Feed the bear before it eats you!
+        <br>
+        <hr>
+        <div class="row">
+          <div class="col-6">
+            <h2>This is You</h2>
+            <div id="showPerson"></div>
+<br><br>
+            <button id="eat-small" type="button" class="btn btn-primary">Blueberries</button>
 
-          <button id="eat-power-up" type="button" class="btn btn-secondary">Baby Deer</button>
+            <button id="eat-power-up" type="button" class="btn btn-secondary">Baby Deer</button>
 
-          <button id="eat-large" type="button" class="btn btn-success">Salmon</button>
+            <button id="eat-large" type="button" class="btn btn-success">Salmon</button>
 
-          <button id="eat-yuck" type="button" class="btn btn-danger">Sticks 😖</button>
+            <button id="eat-yuck" type="button" class="btn btn-danger">Sticks 😖</button>
+            <br>
+            <button id="eat-medium" type="button" class="btn btn-warning">Honey</button>
 
-          <button id="eat-medium" type="button" class="btn btn-warning">Honey</button>
+            <button id="eat-special-bonus" type="button" class="btn btn-info">EVERYTHING</button>
 
-          <button id="eat-special-bonus" type="button" class="btn btn-info">EVERYTHING</button>
+            <button id="eat-weird-things" type="button" class="btn btn-dark">Bugs</button>
 
-          <button id="eat-weird-things" type="button" class="btn btn-dark">Bugs</button>
-          <div id="showPerson"></div>
+          </div>
+
+          <div class="col-6">
+            <center><h2>Food Meter</h2></center>
+            <br>
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <br>
+            <br>
+            <div id="showBear"></div>
+          </div>
+          </div>
         </div>
-        <div class="col-4">
-          <center><h2>Food Meter</h2></center>
-          <br>
-          <div class="progress">
-                   <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                 </div>
-                 <div id="showBear"></div>
-               </div>
-        </div>
-        </div>
-        <p id="death"> You have died!
+      </div>
+      <div id="death">
+        <h2>You have died!</h2>
+        <p>You should have fed the bear.<br>
           <button class-"btn btn-dark"><a href="/">try again!</a></button>
         </p>
-
+      </div>
     </div>
   </body>
   </html>

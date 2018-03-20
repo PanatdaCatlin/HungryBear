@@ -1,11 +1,17 @@
 body{
-  background-color: cornsilk;
+  background-color: darkolivegreen;
+  color: white;
+  text-align: center;
 }
 
 .jumbotron {
-    background-color: lavenderblush;
+    background-color: #868844;
+    margin-top: 6px;
+    padding: 2rem 2rem;
   }
 
   #death{
     display: none;
+    text-align: center;
+
   }
